@@ -7,6 +7,8 @@ import java.util.Random;
 public class deck extends JFrame implements ActionListener {
 
     private JTextArea pantalla;
+    private JTextArea opcion;
+    private JTextArea resultado;
     private JButton btn_shuffle;
     private JButton btn_head;
     private JButton btn_pick;
@@ -146,21 +148,28 @@ public class deck extends JFrame implements ActionListener {
             numCarta++;
         } // Se iniciaiza el deck con 52 cartas
 
-
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         window = new JPanel();
         window.setLayout(null);
 
         pantalla =new JTextArea("");
-        pantalla.setBounds(100,1,400,100);
+        pantalla.setBounds(100,1,400,125);
         window.add(pantalla);
 
-        btn_shuffle = new JButton("Mezclar deck");
-        btn_shuffle.setBounds(0,110,150,50);
+        opcion = new JTextArea("");
+        opcion.setBounds(150,150,150,25);
+        window.add(opcion);
+
+        btn_shuffle = new JButton("Aceptar");
+        btn_shuffle.setBounds(300,150,150,25);
         btn_shuffle.addActionListener(this);
         window.add(btn_shuffle);
 
+        resultado = new JTextArea("");
+        resultado.setBounds(0,200,600,100);
+        window.add(resultado);
+        /*
         btn_hand = new JButton("Eliminar 5 cartas");
         btn_hand.setBounds(150,110,150,50);
         btn_hand.addActionListener(this);
@@ -175,19 +184,21 @@ public class deck extends JFrame implements ActionListener {
         btn_head.setBounds(450,110,150,50);
         btn_head.addActionListener(this);
         window.add(btn_head);
-
+        */
         add(window);
         setSize(600,400);
         setVisible(true);
+
+        showMenu();
     }
 
     public void shuffle(){
         //El método deberá imprimir en pantalla el siguiente mensaje: Se mezcló el Deck.
-        pantalla.setText("Se mezclo el Deck.");
+        resultado.setText("Se mezclo el Deck.");
     }
     public void head(){
         if(hand.size()==0){
-            pantalla.setText("No hay mas cartas para eliminar");
+            resultado.setText("No hay mas cartas para eliminar");
         }
         else {
             String palo = hand.get(0).getPalo();
@@ -196,12 +207,12 @@ public class deck extends JFrame implements ActionListener {
             hand.remove(0);
             //El método deberá imprimir en pantalla un mensaje con el siguiente formato:
             //{Palo},{Color},{Valor} //Quedan {número de cartas en deck}
-            pantalla.setText(palo + ", " + color + ", " + valor + "\nQuedan " + hand.size() + " cartas");
+            resultado.setText(palo + ", " + color + ", " + valor + "\nQuedan " + hand.size() + " cartas");
         }
     }
     public  void pick(){ //seleccionar una carta al azar, la carta deberá removerse del deck. El método deberá imprimir en pantalla un mensaje con el siguiente formato:
         if(hand.size()==0){
-            pantalla.setText("No hay mas cartas para eliminar");
+            resultado.setText("No hay mas cartas para eliminar");
         }
         else {
             Random index = new Random();
@@ -210,7 +221,7 @@ public class deck extends JFrame implements ActionListener {
             String color = hand.get(valorIn).getColor();
             String valor = hand.get(valorIn).getValor();
             hand.remove(valorIn);
-            pantalla.setText(palo + ", " + color + ", " + valor + "\nQuedan " + hand.size() + " cartas");
+            resultado.setText(palo + ", " + color + ", " + valor + "\nQuedan " + hand.size() + " cartas");
             //{Palo},{Color},{Valor}
             //Quedan {número de cartas en deck}
         }
@@ -218,7 +229,7 @@ public class deck extends JFrame implements ActionListener {
     public ArrayList<card> hand_(){
         ArrayList<card> mano = new ArrayList<>();
         if(hand.size()<6){
-            pantalla.setText("Ya no hay cartas disponibles para esta opcion.");
+            resultado.setText("Ya no hay cartas disponibles para esta opcion.");
         }
         else {
             for (int i = 0; i < 5; i++) {
@@ -229,7 +240,7 @@ public class deck extends JFrame implements ActionListener {
                 mano.add(carta);
                 hand.remove(i);
             }
-            pantalla.setText(mano.get(0).getPalo() + ", " + mano.get(0).getColor() + ", " + mano.get(0).getValor() + "\n" +
+            resultado.setText(mano.get(0).getPalo() + ", " + mano.get(0).getColor() + ", " + mano.get(0).getValor() + "\n" +
                     mano.get(1).getPalo() + ", " + mano.get(1).getColor() + ", " + mano.get(1).getValor() + "\n" +
                     mano.get(2).getPalo() + ", " + mano.get(2).getColor() + ", " + mano.get(2).getValor() + "\n" +
                     mano.get(3).getPalo() + ", " + mano.get(3).getColor() + ", " + mano.get(3).getValor() + "\n" +
@@ -238,17 +249,48 @@ public class deck extends JFrame implements ActionListener {
         }
         return mano;
     }
+    public void showMenu(){
+        pantalla.setText("Bienvenido a Poker!\n" +
+                "Selecciona una opción:\n" +
+                "1 Mezclar deck\n" +
+                "2 Sacar una carta\n" +
+                "3 Carta al azar\n" +
+                "4 Generar una mano de 5 cartas\n" +
+                "0 Salir");
+    }
+
+
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)
+    {
+        int op = Integer.parseInt(opcion.getText().toString());
 
-        if(e.getSource() == btn_shuffle)
-            shuffle();
-        else if(e.getSource() == btn_head)
-            head();
-        else if(e.getSource() == btn_pick)
-            pick();
-        else if(e.getSource() == btn_hand)
-            hand_();
+        switch (op){
+            case 1:
+                shuffle();
+                break;
+            case 2:
+                head();
+                break;
+            case 3:
+                pick();
+                break;
+            case 4:
+                hand_();
+                break;
+            case 0:
+                System.exit(0);
+                break;
+            default:
+                pantalla.setText("Bienvenido a Poker!\n" +
+                        "Selecciona una opción:\n" +
+                        "1 Mezclar deck\n" +
+                        "2 Sacar una carta\n" +
+                        "3 Carta al azar\n" +
+                        "4 Generar una mano de 5 cartas\n" +
+                        "0 Salir" + "\nElija una opcion valida");
+
+        }
     }
 }

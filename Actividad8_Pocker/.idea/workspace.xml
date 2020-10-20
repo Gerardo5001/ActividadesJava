@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b58b6d7-17d9-4800-8928-9bdb5d2f46e3" name="Default Changelist" comment="" />
+    <list default="true" id="2b58b6d7-17d9-4800-8928-9bdb5d2f46e3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/deck.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,16 +18,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/deck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="242" column="16" selection-start-line="242" selection-start-column="16" selection-end-line="242" selection-end-column="31" />
+            <state relative-caret-position="1360">
+              <caret line="264" column="16" selection-start-line="264" selection-start-column="16" selection-end-line="264" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#deck#0;class#deck#0" />
-                <element signature="e#608#4825#0" />
+                <element signature="e#510#511#0" expanded="true" />
+                <element signature="e#549#550#0" expanded="true" />
+                <element signature="e#594#4811#0" />
                 <element signature="method#shuffle#0;class#deck#0" />
                 <element signature="method#head#0;class#deck#0" />
                 <element signature="method#pick#0;class#deck#0" />
-                <element signature="e#6639#6682#1" />
+                <element signature="method#hand_#0;class#deck#0" />
+                <element signature="method#actionPerformed#0;class#deck#0" />
               </folding>
             </state>
           </provider>
@@ -32,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/card.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="221">
               <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
               <folding>
                 <element signature="e#198#199#0" expanded="true" />
@@ -53,6 +59,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -62,18 +71,18 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -90,10 +99,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1603161859334" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1603162047380" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
@@ -136,10 +146,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11497731" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11649016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -148,8 +158,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -199,31 +209,33 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java" />
+    <entry file="file://$PROJECT_DIR$/src/deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="264" column="16" selection-start-line="264" selection-start-column="16" selection-end-line="264" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#594#4811#0" />
+            <element signature="method#shuffle#0;class#deck#0" />
+            <element signature="method#head#0;class#deck#0" />
+            <element signature="method#pick#0;class#deck#0" />
+            <element signature="method#hand_#0;class#deck#0" />
+            <element signature="method#actionPerformed#0;class#deck#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/card.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="221">
           <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding>
             <element signature="e#198#199#0" expanded="true" />
             <element signature="e#225#226#0" expanded="true" />
             <element signature="e#398#399#0" expanded="true" />
             <element signature="e#432#433#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/deck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="242" column="16" selection-start-line="242" selection-start-column="16" selection-end-line="242" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#deck#0;class#deck#0" />
-            <element signature="e#608#4825#0" />
-            <element signature="method#shuffle#0;class#deck#0" />
-            <element signature="method#head#0;class#deck#0" />
-            <element signature="method#pick#0;class#deck#0" />
-            <element signature="e#6639#6682#1" />
           </folding>
         </state>
       </provider>
